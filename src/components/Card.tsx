@@ -12,7 +12,7 @@ export interface CardProps{
 
 const Card:FC<CardProps> = ({
     _id,
-    imgSrc,
+    imgSrc = "",
     location,
     beds,
     area,
@@ -21,8 +21,8 @@ const Card:FC<CardProps> = ({
 }) => {
     return (
         <figure className="w-1/4">
-            <img src={imgSrc} alt="View of house"/>
-            <h3>{location}</h3>
+            <img src={imgSrc} alt="View of apartments" className="object-fit w-full aspect-square object-center"/>
+            <h3>📍{location}</h3>
             <h5>{beds} beds</h5>
             <h5>{area} m</h5>
             <h5>{yearOfBuilding} s</h5>

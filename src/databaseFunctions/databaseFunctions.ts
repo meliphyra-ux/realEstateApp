@@ -11,9 +11,9 @@ try {
 const mongo = app.currentUser?.mongoClient("mongodb-atlas");
 const collection = mongo?.db("RealEstateApp").collection("flats")
 
-export const getAllFlats = async (): Promise<CardProps[]> => {
+export const getFlats = async (flatsAmount: number): Promise<CardProps[]> => {
     if(collection){
-        return await collection.find()
+        return await collection.find({},{limit: flatsAmount})
     }
     return []
 }
