@@ -20,7 +20,7 @@ const Card:FC<CardProps> = ({
     price
 }) => {
     return (
-        <figure className="w-1/4">
+        <figure className="w-1/4 bg-[#161617] rounded-xl">
             <img src={imgSrc} alt="View of apartments" className="object-fit w-full aspect-square object-center"/>
             <h3>📍{location}</h3>
             <h5>{beds} beds</h5>

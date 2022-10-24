@@ -9,7 +9,7 @@ const BackgroundWrapper = (Component: FC, backgroundImg: string) : Function => {
     return () => {
         return (
             <div
-                className="w-screen flex flex-row justify-center"
+                className="w-screen h-screen flex flex-row justify-center items-center"
                 style={{
                 backgroundImage: `url(${backgroundImg})`
             }}>
