@@ -15,7 +15,7 @@ const PopularResidence: FunctionComponent = () => {
             .catch(err => {
                 console.log(err)
             })
-    })
+    },[])
     return (
         <section className="max-w-6xl flex flex-col items-center justify-around h-4/5">
             <h2 className="text-5xl font-[Sora, sans_serif] font-bold inline-block w-full relative">Our Popular

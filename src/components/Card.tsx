@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import point from "../assets/point.svg"
 
 export interface CardProps{
@@ -21,20 +21,20 @@ const Card:FC<CardProps> = ({
     price
 }) => {
     return (
-        <figure className="w-1/4 text-light bg-[#161617] rounded-xl">
+        <figure className="w-1/3 text-light bg-[#161617] rounded-xl">
             <img src={imgSrc} alt="View of apartments" className="object-fit w-full aspect-square object-center"/>
             <article className="px-[26px] pb-6">
-                <div className="flex flex-row items-center">
+                <div className="my-2 flex flex-row items-center">
                     <img className="mr-2" src={point} alt=""/>
                     <h3 className="text-[#D0D0D1]">{location}</h3>
                 </div>
-                <div className="flex justify-between">
+                <div className="mb-2 flex justify-between">
                     <h5 className="text-[#969696]">{beds} beds</h5>
                     <h5 className="text-[#969696]">{area} m</h5>
                     <h5 className="text-[#969696]">{yearOfBuilding} s</h5>
                 </div>
-                <button>Book Now</button>
-                <h2 className="inline-block w-2/3  text-end">${price}</h2>
+                <button className="w-1/2 border-green-700 border-2 px-8 py-4 rounded-md  text-green-700 hover:text-white hover:bg-green-700 duration-150">Book Now</button>
+                <h2 className="inline-block w-1/2 text-end text-[20px]">${price}</h2>
             </article>
         </figure>
     );
