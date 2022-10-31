@@ -1,4 +1,7 @@
 import {FC} from 'react';
+import type { RootState } from '../store/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { add } from '../store/slices/cartSlice';
 import point from "../assets/point.svg"
 
 export interface CardProps{
@@ -12,7 +15,6 @@ export interface CardProps{
 }
 
 const Card:FC<CardProps> = ({
-    _id,
     imgSrc = "",
     location,
     beds,
@@ -20,6 +22,8 @@ const Card:FC<CardProps> = ({
     yearOfBuilding,
     price
 }) => {
+    const cart = useSelector((state: RootState) => state.cart.cartItems)
+    const dispatch = useDispatch()
     return (
         <figure className="w-1/3 text-light bg-[#161617] rounded-xl">
             <img src={imgSrc} alt="View of apartments" className="object-fit w-full aspect-square object-center"/>
@@ -33,7 +37,11 @@ const Card:FC<CardProps> = ({
                     <h5 className="text-[#969696]">{area} m</h5>
                     <h5 className="text-[#969696]">{yearOfBuilding} s</h5>
                 </div>
-                <button className="w-1/2 border-green-700 border-2 px-8 py-4 rounded-md  text-green-700 hover:text-white hover:bg-green-700 duration-150">Book Now</button>
+                <button className="w-1/2 border-green-700 border-2 px-8 py-4 rounded-md  text-green-700 hover:text-white hover:bg-green-700 duration-150"
+                onClick={() => {
+                    dispatch(add({imgSrc,location,beds,area,yearOfBuilding,price}))
+                }}
+                >Book Now</button>
                 <h2 className="inline-block w-1/2 text-end text-[20px]">${price}</h2>
             </article>
         </figure>

@@ -1,12 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import Card, {CardProps} from "./components/Card";
+import { Provider } from "react-redux";
 import Main from "./pages/main/Main";
+import {store} from "./store/store"
 
 const App = () => {
     return (
-        <div className="main">
-            <Main />
-        </div>
+        <Provider store={store}>
+            <div className="main">
+                <Main />
+            </div>
+        </Provider>
+        
     );
 };
 

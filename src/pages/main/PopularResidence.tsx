@@ -1,11 +1,11 @@
-import React, {FunctionComponent, useEffect, useState} from 'react';
+import {FC, useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import Card, {CardProps} from "../../components/Card";
 import {getFlats} from "../../databaseFunctions/databaseFunctions";
 import BackgroundWrapper from "../../components/backgroundWrapper";
 import bg from "../../assets/bg.svg"
 
-const PopularResidence: FunctionComponent = () => {
+const PopularResidence:FC = () => {
     const [flats, setFlats] = useState<CardProps[]>([])
     useEffect(() => {
         getFlats(5)

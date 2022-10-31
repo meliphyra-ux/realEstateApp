@@ -1,11 +1,7 @@
-import React, {FC} from 'react';
+import React from 'react';
 
-interface WrapperBackground {
-    Children: any;
-    backgroundImg: string;
-}
 
-const BackgroundWrapper = (Component: FC, backgroundImg: string) : Function => {
+const BackgroundWrapper = (Children: React.FC<{}>, backgroundImg: string) : Function => {
     return () => {
         return (
             <div
@@ -13,7 +9,7 @@ const BackgroundWrapper = (Component: FC, backgroundImg: string) : Function => {
                 style={{
                 backgroundImage: `url(${backgroundImg})`
             }}>
-                <Component/>
+                <Children/>
             </div>
         )
     }
