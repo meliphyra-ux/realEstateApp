@@ -23,8 +23,8 @@ const Card:FC<CardProps> = ({
 }) => {
     const dispatch = useDispatch()
     return (
-        <figure className="w-1/3 text-light bg-[#161617] rounded-xl">
-            <img src={imgSrc} alt="View of apartments" className="object-fit w-full aspect-square object-center"/>
+        <figure className="w-1/3 mx-4 text-light bg-[#161617] rounded-xl">
+            <img src={imgSrc} alt="View of apartments" className="rounded-xl aspect-square object-cover w-full object-center"/>
             <article className="px-[26px] pb-6">
                 <div className="my-2 flex flex-row items-center">
                     <img className="mr-2" src={point} alt=""/>

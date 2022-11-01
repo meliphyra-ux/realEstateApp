@@ -15,11 +15,11 @@ export const cartSlice = createSlice({
     initialState,
     reducers:{
         addItem: (state, action: PayloadAction<CardProps>)=>{
+            // if(state.cartItems.includes(action.payload))
             state.cartItems.push(action.payload)
         },
         removeItem: (state, action: PayloadAction<CardProps>)=> {
-           const modArray = state.cartItems.filter(item => JSON.stringify(item) !== JSON.stringify(action.payload))
-           state.cartItems = [...modArray]
+           state.cartItems = [...state.cartItems.filter(item => JSON.stringify(item) !== JSON.stringify(action.payload))]
         }
     }
 })
