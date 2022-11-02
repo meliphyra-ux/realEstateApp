@@ -1,17 +1,21 @@
 import * as Realm from "realm-web";
 import {CardProps} from "../components/Card";
 
+let collection: any;
 
-
-const app = new Realm.App({ id: "realestateapp-qfgto" });
-const credentials = Realm.Credentials.anonymous();
-try {
-    const user = app.logIn(credentials);
-} catch(err) {
-    console.error("Failed to log in", err);
+async function Auth() {
+    const app = new Realm.App({ id: "realestateapp-qfgto" });
+    const credentials = Realm.Credentials.anonymous();
+    try {
+        const user = app.logIn(credentials);
+    } catch(err) {
+        console.error("Failed to log in", err);
+    }
+    const mongo = app.currentUser?.mongoClient("mongodb-atlas");
+    collection = mongo?.db("RealEstateApp").collection("flats")
 }
-const mongo = app.currentUser?.mongoClient("mongodb-atlas");
-const collection = mongo?.db("RealEstateApp").collection("flats")
+
+Auth()
 
 export const getFlats = async (flatsAmount: number): Promise<CardProps[]> => {
     if(collection){

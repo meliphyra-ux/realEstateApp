@@ -6,7 +6,7 @@ import {store} from "./store/store"
 
 const App = () => {
 
-    // location.pathname === "/" ? location.assign("/buying") : null
+    location.pathname === "/" ? location.assign("/buying") : null
     return (
         <Provider store={store}>
             <Header />
