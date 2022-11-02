@@ -5,7 +5,7 @@ const BackgroundWrapper = (Children: React.FC<{}>, backgroundImg: string) : Func
     return () => {
         return (
             <div
-                className="w-screen h-screen flex flex-row justify-center items-center"
+                className="w-full h-screen flex flex-row justify-center items-center bg-cover pt-10"
                 style={{
                 backgroundImage: `url(${backgroundImg})`
             }}>
