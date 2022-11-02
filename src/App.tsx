@@ -6,15 +6,15 @@ import {store} from "./store/store"
 
 const App = () => {
 
-    location.pathname === "/" ? location.assign("/buying") : null
+    // location.pathname === "/" ? location.assign("/buying") : null
     return (
         <Provider store={store}>
             <Header />
             <div className="main">
-                <Routes>
-                    <Route path="/:id" element={<Main />}/>
-                </Routes>
-                {/* <Main /> */}
+                {/* <Routes>
+                    <Route path="/" element={<Main />}/>
+                </Routes> */}
+                <Main />
             </div>
         </Provider>
         
