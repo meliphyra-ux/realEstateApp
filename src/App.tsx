@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-// import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./pages/main/Main";
 import {store} from "./store/store"
@@ -11,10 +11,10 @@ const App = () => {
         <Provider store={store}>
             <Header />
             <div className="main">
-                {/* <Routes>
-                    <Route path="/" element={<Main />}/>
-                </Routes> */}
-                <Main />
+                <Routes>
+                    <Route path="/:id" element={<Main />}/>
+                </Routes>
+                {/* <Main /> */}
             </div>
         </Provider>
         
