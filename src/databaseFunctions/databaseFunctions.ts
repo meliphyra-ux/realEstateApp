@@ -3,7 +3,7 @@ import {CardProps} from "../components/Card";
 
 let collection: any;
 
-async function Auth() {
+export async function Auth() {
     const app = new Realm.App({ id: "realestateapp-qfgto" });
     const credentials = Realm.Credentials.anonymous();
     try {
@@ -15,7 +15,7 @@ async function Auth() {
     collection = mongo?.db("RealEstateApp").collection("flats")
 }
 
-Auth()
+
 
 export const getFlats = async (flatsAmount: number): Promise<CardProps[]> => {
     if(collection){
