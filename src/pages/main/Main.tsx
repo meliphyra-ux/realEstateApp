@@ -1,11 +1,8 @@
-import CartIcon from "../../assets/cart.png"
 import PopularResidence from "./PopularResidence";
 import { useSelector } from "react-redux";
 import type { RootState } from '../../store/store';
-import Cart from "../cart/Cart";
 
 const Main = () => {
-    const cart = useSelector((state: RootState) => state.cart.cartItems.length)
     return (
         <main>
             {/* <div className="relative bg-black">
