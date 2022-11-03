@@ -10,13 +10,19 @@ export interface CartItemProps {
 const CartItem: FC<CartItemProps> = ({ item }) => {
   const dispatch = useDispatch();
   return (
-    <figure className="flex m-4 flex-row items-center justify-between p-4 border-4 rounded-lg w-[80vw] border-white">
+    <figure className="flex mb-4 flex-row items-center justify-between p-4 border-4 rounded-lg border-white w-1/2">
       <img width={300} src={item.imgSrc} alt="" />
+      
       <div>
-        <p>{item.location}</p>
-        <p>{item.price}</p>
+        <h2 className="font-bold border-b-2 border-white pb-3 mb-3 w-fit">
+          Information:
+        </h2>
+        <ul className="list-disc">
+          <li>Location📍: {item.location}</li>
+          <li>Price💵: {item.price}$</li>
+        </ul>
         <button
-        className="border-green-700 border-2 px-8 py-4 rounded-md  text-green-700 hover:text-white hover:bg-green-700 duration-150"
+          className="mt-4 border-red-700 border-2 px-4 py-2 rounded-md  text-red-700 hover:text-white hover:bg-red-700 duration-150"
           onClick={() => {
             dispatch(removeItem(item));
           }}
