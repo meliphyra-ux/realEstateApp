@@ -7,7 +7,7 @@ import logo from "../assets/logo.svg";
 const Header: FC = () => {
   const { pathname } = useLocation();
   const cartCounter = useSelector(
-    (state: RootState) => state.cart.cartItems.length
+    (state: RootState) => state.cart.cartItems.reduce<number>((prev,cur) => prev + cur.counter, 0)
   );
   return (
     <header className="w-full flex justify-center fixed">

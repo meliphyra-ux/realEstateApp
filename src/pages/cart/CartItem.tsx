@@ -1,10 +1,9 @@
 import { FC } from "react";
 import { useDispatch } from "react-redux";
-import { removeItem } from "../../store/slices/cartSlice";
-import { CardProps } from "../../components/Card";
+import { CartItems, removeItem } from "../../store/slices/cartSlice";
 
 export interface CartItemProps {
-  item: CardProps;
+  item: CartItems;
 }
 
 const CartItem: FC<CartItemProps> = ({ item }) => {
@@ -12,7 +11,7 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
   return (
     <figure className="flex mb-4 flex-row items-center justify-between p-4 border-4 rounded-lg border-white w-1/2">
       <img width={300} src={item.imgSrc} alt="" />
-      
+      <p>{item.counter}</p>
       <div>
         <h2 className="font-bold border-b-2 border-white pb-3 mb-3 w-fit">
           Information:

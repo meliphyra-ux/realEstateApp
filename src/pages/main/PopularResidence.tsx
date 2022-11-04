@@ -34,6 +34,7 @@ const PopularResidence: FC = () => {
           flats.map((flat) => (
             <Card
               key={flat._id}
+              _id={flat._id}
               imgSrc={flat.imgSrc}
               location={flat.location}
               beds={flat.beds}
