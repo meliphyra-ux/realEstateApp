@@ -4,8 +4,12 @@ import Header from "./components/Header";
 import Cart from "./pages/cart/Cart";
 import Main from "./pages/main/Main";
 import { store } from "./store/store";
+import { Auth, fetchFlats } from "./databaseFunctions/databaseFunctions";
 
 const App = () => {
+  Auth().then(()=> store.dispatch(fetchFlats(5)))
+  
+
   location.pathname === "/" ? location.assign("/buying") : null;
   return (
     <Provider store={store}>

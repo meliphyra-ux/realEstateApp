@@ -1,5 +1,6 @@
 import * as Realm from "realm-web";
 import { CardProps } from "../components/Card";
+import { addFlats } from "../store/slices/flatsSlice";
 
 let collection: any;
 
@@ -16,8 +17,15 @@ export async function Auth() {
 }
 
 export const getFlats = async (flatsAmount: number): Promise<CardProps[]> => {
-  if (collection) {
+  if (collection){
     return await collection.find({}, { limit: flatsAmount });
   }
   return [];
 };
+
+export const fetchFlats = (flatsAmount: number) => async (dispatch: any) => {
+    await getFlats(flatsAmount).then(flats => {
+      dispatch(addFlats(flats))
+    }) 
+    
+}
