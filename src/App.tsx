@@ -8,8 +8,6 @@ import { Auth, fetchFlats } from "./databaseFunctions/databaseFunctions";
 
 const App = () => {
   Auth().then(()=> store.dispatch(fetchFlats(5)))
-  
-
   location.pathname === "/" ? location.assign("/buying") : null;
   return (
     <Provider store={store}>

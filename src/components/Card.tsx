@@ -2,6 +2,8 @@ import { FC } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../store/slices/cartSlice";
 import point from "../assets/point.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export interface CardProps {
   _id: string;
@@ -25,8 +27,10 @@ const Card: FC<CardProps> = ({
   const dispatch = useDispatch();
   return (
     <figure className="w-1/3 mx-4 text-light bg-[#161617] rounded-xl">
-      <img
+      <LazyLoadImage
         src={imgSrc}
+        effect="blur"
+        placeholderSrc={imgSrc}
         alt="View of apartments"
         className="rounded-xl aspect-square object-cover w-full object-center"
       />

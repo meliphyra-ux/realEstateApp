@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useSelector } from "react-redux";
 import BackgroundWrapper from "../../components/backgroundWrapper";
 import type { RootState } from "../../store/store";
