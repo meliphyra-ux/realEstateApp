@@ -26,7 +26,7 @@ const Card: FC<CardProps> = ({
 }) => {
   const dispatch = useDispatch();
   return (
-    <figure className="w-1/3 mx-4 text-light bg-[#161617] rounded-xl">
+    <figure className="w-1/3 min-w-[280px] mx-4 text-light bg-[#161617] rounded-xl">
       <LazyLoadImage
         src={imgSrc}
         effect="blur"

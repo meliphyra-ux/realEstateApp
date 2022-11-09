@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 
 const PopularResidence: FC = () => {
-  const flats = useSelector((state: RootState) => state.flats.flatsArray)
+  const flats = useSelector((state: RootState) => state.flats.flatsArray);
   return (
     <section className="max-w-6xl w-full flex flex-col items-center justify-around h-4/5">
       <h2 className="text-5xl font-[Sora, sans_serif] font-bold inline-block w-full relative">
@@ -20,7 +20,7 @@ const PopularResidence: FC = () => {
         </Link>
       </h2>
       <div className="flex flex-row justify-between">
-        {flats ? (
+        {flats.length !== 0 ? (
           flats.map((flat) => (
             <Card
               key={flat._id}
@@ -34,7 +34,16 @@ const PopularResidence: FC = () => {
             />
           ))
         ) : (
-          <h2>Loading...</h2>
+          <Card
+            key="Loading..."
+            _id="Loading..."
+            imgSrc=""
+            location="Loading..."
+            beds={0}
+            area="Loading..."
+            yearOfBuilding={0}
+            price={0}
+          />
         )}
       </div>
     </section>
